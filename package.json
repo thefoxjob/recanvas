@@ -1,0 +1,61 @@
+{
+  "name": "@thefoxjob/recanvas",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thefoxjob/recanvas.git"
+  },
+  "author": "Edward Khor",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "canvas",
+    "yoga",
+    "flex",
+    "dom",
+    "image"
+  ],
+  "scripts": {
+    "build": "node scripts/esbuild.js",
+    "build:types": "tsc; echo 'Built recanvas types'",
+    "dev": "run-p -cl dev:types dev:build",
+    "dev:build": "node scripts/esbuild.js watch",
+    "dev:types": "tsc --watch --preserveWatchOutput",
+    "prebuild": "npm run build:types",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "react-reconciler": "^0.29.0"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@thirtyfox/eslint-config-react": "^1.0.6",
+    "@types/node": "^16.0.0",
+    "@types/react": "^18.0.27",
+    "@types/react-reconciler": "^0",
+    "esbuild": "^0.17.5",
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "npm-run-all": "^4.1.5",
+    "react": "*",
+    "typescript": "^4.7.4"
+  }
+}
